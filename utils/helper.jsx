@@ -25,6 +25,7 @@ export const useResize = () => {
 
   return responsive;
 };
+
 export const isMobile = () => {
   var check = false;
   (function (a) {

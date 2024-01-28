@@ -55,7 +55,7 @@ function Navbar() {
 
   // resize function
 
-  const { sm } = useResize();
+  const { sm } = useResize() || {};
 
   // nav bottom
 
