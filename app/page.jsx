@@ -17,7 +17,7 @@ export default function Home() {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const url = "http://localhost:3001/products";
+      const url = `${process.env.base_url}/products`;
       const res = await axios.get(url, {
         headers: {
           "Content-Type": "application/json",

@@ -20,7 +20,7 @@ const Products = () => {
   const newCategory = async (formData) => {
     try {
       const { data } = await axios.post(
-        `http://localhost:3001/categories/new`,
+        `${process.env.base_url}/categories/new`,
         formData,
         {
           headers: {

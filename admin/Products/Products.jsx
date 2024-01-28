@@ -28,7 +28,7 @@ const Products = () => {
 
   useEffect(() => {
     const fetchCategories = async () => {
-      const url = "http://localhost:3001/categories";
+      const url = `${process.env.base_url}/categories`;
       const res = await axios.get(url, {
         headers: {
           "Content-Type": "application/json",
@@ -92,7 +92,7 @@ const Products = () => {
   const newProduct = async (formData) => {
     try {
       const { data } = await axios.post(
-        `http://localhost:3001/product/new`,
+        `${process.env.base_url}product/new`,
         formData,
         {
           headers: {
