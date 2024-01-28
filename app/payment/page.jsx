@@ -5,7 +5,8 @@ import Link from "next/link";
 import { useEffect, useState, Suspense } from "react";
 import thankyouStyle from "../../styles/thank_you.module.css";
 import { useRouter, useSearchParams } from "next/navigation";
-export default function PaymentStatus(props) {
+
+const Page = (props) => {
   const [status, setStatus] = useState("succss");
   const [message, setMessage] = useState();
   const [orderId, setOrderId] = useState();
@@ -118,4 +119,14 @@ export default function PaymentStatus(props) {
       </div>
     </Suspense>
   );
-}
+};
+
+const PaymentStatus = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Page />
+    </Suspense>
+  );
+};
+
+export default PaymentStatus;
