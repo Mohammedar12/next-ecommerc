@@ -1,0 +1,16 @@
+.products_section {
+    margin: 40px 0;
+}
+
+.products_section .container {
+    display: flex;
+    justify-content: center;
+
+    gap: 2rem;
+}
+
+@media (max-width : 550px) {
+    .products_section .container {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,22 @@
+.section_heading {
+  margin: 40px 0;
+}
+
+.section_title {
+
+  text-align: center;
+  position: relative;
+}
+
+
+.section_title::before {
+  content: '';
+  width: clamp(50px , 100% , 140px);
+  height: 3px;
+  border-radius: 2px;
+  background-color: black;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50% , 0);
+}
