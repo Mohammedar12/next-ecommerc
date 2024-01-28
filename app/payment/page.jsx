@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import thankyouStyle from "../../styles/thank_you.module.css";
 import { useRouter, useSearchParams } from "next/navigation";
 export default function PaymentStatus(props) {
@@ -36,7 +36,7 @@ export default function PaymentStatus(props) {
   }, []);
   if (status === "succss") {
     return (
-      <>
+      <Suspense fallback={<div>Loading...</div>}>
         <div className="flex flex-col min-h-screen w-full items-center justify-center">
           <div className="flex flex-col gap-3 justify-center items-center">
             <div className="flex flex-col items-center gap-2 text-center">
@@ -71,49 +71,51 @@ export default function PaymentStatus(props) {
             </div>
           </div>
         </div>
-      </>
+      </Suspense>
     );
   }
 
   return (
-    <div className="container" style={{ height: "70vh" }}>
-      <div
-        className="row d-flex flex-column justify-content-center align-items-center"
-        style={{
-          height: "70vh",
-          ...(status === "Failed" || status === "Error"
-            ? { color: "red" }
-            : {}),
-        }}
-      >
-        {status === "Error" && (
-          <img
-            style={{ width: 200, padding: 10 }}
-            src="/images/error.png"
-            alt="Error"
-          />
-        )}
-        {status === "failed" && (
-          <img
-            style={{ width: 200, padding: 10 }}
-            src="/images/credit-card.png"
-            alt="Payment failed"
-          />
-        )}
-        {status === "succss" && (
-          <img
-            style={{ width: 200, padding: 10 }}
-            src="/images/successful.png"
-            alt="Order placed successfully."
-          />
-        )}
-        {message}
-        {status === "succss" && (
-          <div className="d-flex justify-content-center pt-4">
-            <button className="btn btn-outline-success">My Orders</button>
-          </div>
-        )}
+    <Suspense fallback={<div>Loading...</div>}>
+      <div className="container" style={{ height: "70vh" }}>
+        <div
+          className="row d-flex flex-column justify-content-center align-items-center"
+          style={{
+            height: "70vh",
+            ...(status === "Failed" || status === "Error"
+              ? { color: "red" }
+              : {}),
+          }}
+        >
+          {status === "Error" && (
+            <img
+              style={{ width: 200, padding: 10 }}
+              src="/images/error.png"
+              alt="Error"
+            />
+          )}
+          {status === "failed" && (
+            <img
+              style={{ width: 200, padding: 10 }}
+              src="/images/credit-card.png"
+              alt="Payment failed"
+            />
+          )}
+          {status === "succss" && (
+            <img
+              style={{ width: 200, padding: 10 }}
+              src="/images/successful.png"
+              alt="Order placed successfully."
+            />
+          )}
+          {message}
+          {status === "succss" && (
+            <div className="d-flex justify-content-center pt-4">
+              <button className="btn btn-outline-success">My Orders</button>
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+    </Suspense>
   );
 }
