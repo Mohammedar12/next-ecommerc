@@ -32,7 +32,7 @@ function Category() {
         const sizeQuery = size ? `&size=${size}` : "";
         const queries = `${genderQuery}${neckTypeQuery}${sizeQuery}`;
 
-        const url = `http://localhost:3001/products/${params.id}?pageSize=${page}${queries}`;
+        const url = `${process.env.base_url}/products/${params.id}?pageSize=${page}${queries}`;
         const res = await axios.get(url, {
           headers: {
             "Content-Type": "application/json",
@@ -62,7 +62,7 @@ function Category() {
 
   const fetchTotalProducts = async () => {
     try {
-      const url = `http://localhost:3001/productsCount/${params.id}`;
+      const url = `${process.env.base_url}/productsCount/${params.id}`;
       const { data } = await axios.get(url, {
         headers: {
           "Content-Type": "application/json",

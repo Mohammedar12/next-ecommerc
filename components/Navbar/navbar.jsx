@@ -40,7 +40,7 @@ function Navbar() {
 
   useEffect(() => {
     const fetchCategories = async () => {
-      const url = "http://localhost:3001/categories";
+      const url = `${process.env.base_url}/categories`;
       const res = await axios.get(url, {
         headers: {
           "Content-Type": "application/json",
@@ -70,7 +70,7 @@ function Navbar() {
   // const getSearch = async () => {
   //   try {
   //     const { data } = await axios.get(
-  //       `http://localhost:3001/products/?name=${search}`
+  //       `${process.env.base_url}/products/?name=${search}`
   //     );
   //     setGetSearched(data);
   //   } catch (err) {

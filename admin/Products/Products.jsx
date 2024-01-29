@@ -92,7 +92,7 @@ const Products = () => {
   const newProduct = async (formData) => {
     try {
       const { data } = await axios.post(
-        `${process.env.base_url}product/new`,
+        `${process.env.base_url}/product/new`,
         formData,
         {
           headers: {

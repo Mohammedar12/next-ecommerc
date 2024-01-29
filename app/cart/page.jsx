@@ -130,7 +130,7 @@ const Page = () => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:3001/order/checkout",
+        `${process.env.base_url}/order/checkout`,
         {
           items: cart?.cartItems,
           shippingInfo,

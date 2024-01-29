@@ -33,7 +33,7 @@ export const AuthProvider = ({ children }) => {
   const registerUser = async ({ name, email, password }) => {
     try {
       const { data } = await axios.post(
-        `http://localhost:3001/sing-up`,
+        `${process.env.base_url}/sing-up`,
         {
           name,
           email,
@@ -63,7 +63,7 @@ export const AuthProvider = ({ children }) => {
   const loginUser = async ({ req, email, password }) => {
     try {
       const { data } = await axios.post(
-        `http://localhost:3001/login`,
+        `${process.env.base_url}/login`,
         {
           email,
           password,
@@ -105,7 +105,7 @@ export const AuthProvider = ({ children }) => {
     try {
       setLoading(true);
       const { data } = await axios.put(
-        `http://localhost:3001/profile/update?id=${userData._id}`,
+        `${process.env.base_url}/profile/update?id=${userData._id}`,
         formData,
         {
           headers: {
@@ -129,7 +129,7 @@ export const AuthProvider = ({ children }) => {
 
   const getUser = async () => {
     try {
-      const { data } = await axios.get(`http://localhost:3001/user`, {
+      const { data } = await axios.get(`${process.env.base_url}/user`, {
         headers: {
           "Content-Type": "application/json",
           token: process.env.TOKEN,
@@ -153,7 +153,7 @@ export const AuthProvider = ({ children }) => {
   }) => {
     try {
       const { data } = await axios.post(
-        `http://localhost:3001/address/new`,
+        `${process.env.base_url}/address/new`,
         {
           street,
           city,
@@ -181,7 +181,7 @@ export const AuthProvider = ({ children }) => {
 
   const getAddress = async () => {
     try {
-      const { data } = await axios.get(`http://localhost:3001/address`, {
+      const { data } = await axios.get(`${process.env.base_url}/address`, {
         headers: {
           "Content-Type": "application/json",
           token: process.env.TOKEN,
@@ -197,7 +197,7 @@ export const AuthProvider = ({ children }) => {
 
   const getOrderAddress = async () => {
     try {
-      const { data } = await axios.get(`http://localhost:3001/address`, {
+      const { data } = await axios.get(`${process.env.base_url}/address`, {
         headers: {
           "Content-Type": "application/json",
           token: process.env.TOKEN,
@@ -215,7 +215,7 @@ export const AuthProvider = ({ children }) => {
     try {
       console.log(id);
       const data = await axios.put(
-        `http://localhost:3001/address/update/${id}`,
+        `${process.env.base_url}/address/update/${id}`,
         address,
         {
           headers: {
@@ -237,7 +237,7 @@ export const AuthProvider = ({ children }) => {
     try {
       console.log(id);
       const data = await axios.delete(
-        `http://localhost:3001/address/delete/${id}`,
+        `${process.env.base_url}/address/delete/${id}`,
         {
           headers: {
             "Content-Type": "application/json",

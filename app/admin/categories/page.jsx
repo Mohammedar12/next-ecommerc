@@ -8,7 +8,7 @@ function page() {
 
   useEffect(() => {
     const fetchCategories = async () => {
-      const url = "http://localhost:3001/categories";
+      const url = `${process.env.base_url}/categories`;
       const res = await axios.get(url, {
         headers: {
           "Content-Type": "application/json",

@@ -18,7 +18,7 @@ export default function Page({ params }) {
 
   useEffect(() => {
     const getProduct = async (id) => {
-      const { data } = await axios.get(`http://localhost:3001/product/${id}`);
+      const { data } = await axios.get(`${process.env.base_url}/product/${id}`);
 
       return setProduct(data);
     };
@@ -27,7 +27,7 @@ export default function Page({ params }) {
 
   // useEffect(() => {
   //   const fetchCategories = async () => {
-  //     const url = `http://localhost:3001/categories/${product?.category}`;
+  //     const url = `${process.env.base_url}/categories/${product?.category}`;
   //     const res = await axios.get(url, {
   //       headers: {
   //         "Content-Type": "application/json",
