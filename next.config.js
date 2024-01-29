@@ -5,7 +5,7 @@ const nextConfig = {
   },
   env: {
     TOKEN: "sbbs76bgsyegfyrbfyue",
-    base_url: "https://next-ecommerc-server.vercel.app",
+    base_url: "https://regal-cat-c2dd83.netlify.app",
   },
 };
 
