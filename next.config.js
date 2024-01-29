@@ -5,7 +5,7 @@ const nextConfig = {
   },
   env: {
     TOKEN: "sbbs76bgsyegfyrbfyue",
-    base_url: "https://regal-cat-c2dd83.netlify.app",
+    base_url: "https://myserver-ti3o.onrender.com",
   },
 };
 
