@@ -5,7 +5,8 @@ const nextConfig = {
   },
   env: {
     TOKEN: "sbbs76bgsyegfyrbfyue",
-    base_url: "https://myserver-ti3o.onrender.com",
+    // base_url: "https://myserver-ti3o.onrender.com",
+    base_url: "http://localhost:5000",
   },
 };
 
