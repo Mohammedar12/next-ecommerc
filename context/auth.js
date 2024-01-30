@@ -80,7 +80,7 @@ export const AuthProvider = ({ children }) => {
         setCookie("user", data?.token);
         localStorage.setItem("userID", data?.userId);
 
-        router.push("/");
+        // router.push("/");
       }
       console.log(userData, "as");
     } catch (error) {
