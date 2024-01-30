@@ -26,7 +26,7 @@ export default function AuthenticationPage() {
         />
       </div>
       <div className="container relative flex h-[800px] flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
-        <Link
+        {/* <Link
           href="/examples/authentication"
           className={cn(
             buttonVariants({ variant: "ghost" }),
@@ -34,7 +34,7 @@ export default function AuthenticationPage() {
           )}
         >
           Login
-        </Link>
+        </Link> */}
         <div className="relative hidden flex-col bg-muted  text-white lg:flex dark:border-r">
           <div className="relative z-20 mt-auto">
             <Image
