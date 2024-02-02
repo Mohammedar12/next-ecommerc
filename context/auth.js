@@ -88,12 +88,30 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const logoutUser = () => {
-    deleteCookie("user");
-    deleteCookie("session");
-    setUser(false);
-    localStorage.removeItem("userID");
-    localStorage.removeItem("userData");
+  const logoutUser = async () => {
+    try {
+      const { data } = await axios.get(`${process.env.base_url}/logout`, {
+        headers: {
+          "Content-Type": "application/json",
+          token: process.env.TOKEN,
+        },
+        withCredentials: true,
+      });
+
+      if (data) {
+        // console.log(data);
+        deleteCookie("user");
+        // deleteCookie("session");
+        setUser(false);
+        localStorage.removeItem("userID");
+        localStorage.removeItem("userData");
+
+        // router.push("/");
+      }
+      console.log("removed");
+    } catch (error) {
+      setErorr(error?.response?.data?.message);
+    }
   };
 
   const updateProfile = async (formData) => {
