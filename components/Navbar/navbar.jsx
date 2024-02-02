@@ -350,7 +350,11 @@ function Navbar() {
               sx={{ borderRadius: "10px" }}
               label="User"
               value="user"
-              icon={<AiOutlineUser />}
+              icon={
+                <Link href="/profile">
+                  <AiOutlineUser />
+                </Link>
+              }
             />
           </BottomNavigation>
         </div>

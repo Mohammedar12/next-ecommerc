@@ -1,13 +1,12 @@
 "use client";
 
+import AuthContext from "@/context/auth";
 import { signOut } from "next-auth/react";
 import Link from "next/link";
-import React from "react";
+import React, { useContext } from "react";
 
 const Sidebar = () => {
-  const logoutHandler = () => {
-    signOut();
-  };
+  const { logoutUser } = useContext(AuthContext);
 
   return (
     <aside className="md:w-1/3 lg:w-1/4 px-4">
@@ -104,12 +103,12 @@ const Sidebar = () => {
 
         <li>
           {" "}
-          <a
+          <button
             className="block px-3 py-2 text-red-800 hover:bg-red-100 hover:text-white-500 rounded-md cursor-pointer"
-            onClick={logoutHandler}
+            onClick={logoutUser}
           >
             Logout
-          </a>
+          </button>
         </li>
       </ul>
     </aside>
