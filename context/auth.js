@@ -80,7 +80,7 @@ export const AuthProvider = ({ children }) => {
         setCookie("user", data?.token);
         localStorage.setItem("userID", data?.userId);
 
-        // router.push("/");
+        router.push("/");
       }
       console.log(userData, "as");
     } catch (error) {
@@ -106,7 +106,7 @@ export const AuthProvider = ({ children }) => {
         localStorage.removeItem("userID");
         localStorage.removeItem("userData");
 
-        // router.push("/");
+        router.push("/");
       }
       console.log("removed");
     } catch (error) {

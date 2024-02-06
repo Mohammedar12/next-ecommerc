@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Link from "next/link";
 
 export function UserAuthForm({ className, ...props }) {
   const [isLoading, setIsLoading] = useState(false);
@@ -83,11 +84,15 @@ export function UserAuthForm({ className, ...props }) {
           <span className="w-full border-t" />
         </div>
         <div className="relative flex justify-center text-xs uppercase">
-          <span className="bg-background px-2 text-muted-foreground">
-            Or Create A New Account
-          </span>
+          <span className="bg-background px-2 text-muted-foreground">Or</span>
         </div>
       </div>
+      <Button disabled={isLoading}>
+        {/* {isLoading && (
+              <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+            )} */}
+        <Link href={"/sign-up"}>Create A New Account</Link>
+      </Button>
     </div>
   );
 }

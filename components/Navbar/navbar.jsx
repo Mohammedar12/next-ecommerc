@@ -23,7 +23,7 @@ import {
 // icons
 
 import { AiOutlineShoppingCart, AiOutlineUser } from "react-icons/ai";
-import { CiSearch, CiMenuBurger } from "react-icons/ci";
+import { CiSearch, CiMenuBurger, CiLogout } from "react-icons/ci";
 
 function Navbar() {
   const [drawer, setDrawer] = useState(false);
@@ -151,14 +151,26 @@ function Navbar() {
                 <AiOutlineUser /> Login
               </Link>
             ) : (
-              <button
-                onClick={logoutUser}
-                className="flex items-center justify-center
-               gap-[10px] my-[30px] mx-auto bg-black
+              <>
+                {!isMobile() && (
+                  <Link
+                    href={"/profile"}
+                    className="flex items-center justify-center
+                 gap-[10px] my-[10px] mx-auto bg-black
+                  text-white p-2 w-[80%] rounded-md hover:text-white"
+                  >
+                    <AiOutlineUser /> Profile
+                  </Link>
+                )}
+                <button
+                  onClick={logoutUser}
+                  className="flex items-center justify-center
+               gap-[10px] my-[10px] mx-auto bg-black
                 text-white p-2 w-[80%] rounded-md hover:text-white"
-              >
-                <AiOutlineUser /> Log Out
-              </button>
+                >
+                  <CiLogout /> Log Out
+                </button>
+              </>
             )}
           </div>
         ) : (

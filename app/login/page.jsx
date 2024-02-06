@@ -26,15 +26,6 @@ export default function AuthenticationPage() {
         />
       </div>
       <div className="container relative flex h-[800px] flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
-        {/* <Link
-          href="/examples/authentication"
-          className={cn(
-            buttonVariants({ variant: "ghost" }),
-            "absolute right-4 top-4 md:right-8 md:top-8"
-          )}
-        >
-          Login
-        </Link> */}
         <div className="relative hidden flex-col bg-muted  text-white lg:flex dark:border-r">
           <div className="relative z-20 mt-auto">
             <Image
@@ -61,14 +52,14 @@ export default function AuthenticationPage() {
             <p className="px-8 text-center text-sm text-muted-foreground">
               By clicking continue, you agree to our{" "}
               <Link
-                href="/terms"
+                href="/"
                 className="underline underline-offset-4 hover:text-primary"
               >
                 Terms of Service
               </Link>{" "}
               and{" "}
               <Link
-                href="/privacy"
+                href="/"
                 className="underline underline-offset-4 hover:text-primary"
               >
                 Privacy Policy
