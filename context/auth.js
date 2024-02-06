@@ -19,6 +19,10 @@ export const AuthProvider = ({ children }) => {
   const router = useRouter();
 
   useEffect(() => {
+    getUser();
+  }, []);
+
+  useEffect(() => {
     getAddress();
     console.log(localStorage.getItem("userID"));
     setUpdate(false);
